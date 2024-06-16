@@ -1,0 +1,25 @@
+.tabs ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabs ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.tabs ul li.active {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.tab-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

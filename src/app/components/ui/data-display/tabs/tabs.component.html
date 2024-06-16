@@ -1,1 +1,12 @@
-<p>tabs works!</p>
+<div class="tabs">
+    <ul>
+        <li *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)" [class.active]="i === selectedTab">
+            {{ tab.label }}
+        </li>
+    </ul>
+    <div class="tab-content">
+        <ng-container *ngFor="let tab of tabs; let i = index">
+            <div *ngIf="i === selectedTab">{{ tab.content }}</div>
+        </ng-container>
+    </div>
+</div>
