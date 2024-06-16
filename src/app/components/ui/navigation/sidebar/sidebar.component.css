@@ -8,36 +8,37 @@
     left: -250px;
     transition: left 0.3s;
     padding-top: 20px;
-  }
-  
-  .sidebar.visible {
+    z-index: 1001;
+    /* Ensure it's above the footer */
+}
+
+.sidebar.visible {
     left: 0;
-  }
-  
-  .sidebar .close-btn {
+}
+
+.sidebar .close-btn {
     font-size: 30px;
     margin-left: 220px;
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  .sidebar ul {
+}
+
+.sidebar ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .sidebar ul li {
+}
+
+.sidebar ul li {
     padding: 10px;
     text-align: center;
-  }
-  
-  .sidebar ul li a {
+}
+
+.sidebar ul li a {
     text-decoration: none;
     color: #333;
-  }
-  
-  .sidebar ul li a:hover {
+}
+
+.sidebar ul li a:hover {
     text-decoration: underline;
-  }
-  
+}
