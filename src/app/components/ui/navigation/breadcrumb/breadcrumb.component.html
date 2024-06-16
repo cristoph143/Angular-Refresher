@@ -1,1 +1,7 @@
-<p>breadcrumb works!</p>
+<nav aria-label="breadcrumb">
+    <ol>
+        <li *ngFor="let item of items">
+            <a [href]="item.url">{{ item.label }}</a>
+        </li>
+    </ol>
+</nav>
