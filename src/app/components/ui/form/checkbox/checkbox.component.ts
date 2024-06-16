@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
-  styleUrl: './checkbox.component.css'
+  styleUrls: ['./checkbox.component.css']
 })
 export class CheckboxComponent {
-
+  @Input() label: string = '';
+  @Input() checked: boolean = false;
 }
