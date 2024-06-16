@@ -1,7 +1,8 @@
-<aside>
+<div class="sidebar" [class.visible]="isVisible">
+    <button class="close-btn" (click)="onClose()">×</button>
     <ul>
         <li><a href="/">Dashboard</a></li>
         <li><a href="/settings">Settings</a></li>
         <li><a href="/profile">Profile</a></li>
     </ul>
-</aside>
+</div>

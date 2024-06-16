@@ -61,4 +61,23 @@ import { ProgressBarComponent } from './components/ui/misc/progress-bar/progress
 })
 export class AppComponent {
   title = 'myapp';
+
+  isModalVisible: boolean = false;
+  isSidebarVisible: boolean = true;
+
+  openModal() {
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
+  }
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
+
+  closeSidebar() {
+    this.isSidebarVisible = false;
+  }
 }

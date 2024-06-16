@@ -1,42 +1,53 @@
-<h1>Welcome to {{ title }}</h1>
+<div class="main-wrapper" [class.sidebar-visible]="isSidebarVisible">
+  <h1>Welcome to {{ title }}</h1>
 
-<!-- Form Components -->
-<app-input type="text" placeholder="Enter your name"></app-input>
-<app-checkbox label="Accept Terms" [checked]="true"></app-checkbox>
-<app-radio name="gender" label="Male" value="male" [checked]="true"></app-radio>
-<app-select [options]="['Option 1', 'Option 2', 'Option 3']" selected="Option 1"></app-select>
-<app-date-picker selectedDate="2023-01-01"></app-date-picker>
+  <!-- Button to toggle sidebar -->
+  <button (click)="toggleSidebar()">Toggle Sidebar</button>
 
-<!-- Navigation Components -->
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
-<app-breadcrumb [items]="[{label: 'Home', url: '/'}, {label: 'About', url: '/about'}]"></app-breadcrumb>
-<app-pagination [totalPages]="5" [currentPage]="1"></app-pagination>
+  <!-- Sidebar Component -->
+  <app-sidebar [isVisible]="isSidebarVisible" (close)="closeSidebar()"></app-sidebar>
 
-<!-- Feedback Components -->
-<app-alert type="success" message="This is a success alert!"></app-alert>
-<app-toast-notification message="This is a toast notification!" type="info"></app-toast-notification>
-<app-spinner-loader></app-spinner-loader>
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Form Components -->
+    <app-input type="text" placeholder="Enter your name"></app-input>
+    <app-checkbox label="Accept Terms" [checked]="true"></app-checkbox>
+    <app-radio name="gender" label="Male" value="male" [checked]="true"></app-radio>
+    <app-select [options]="['Option 1', 'Option 2', 'Option 3']" selected="Option 1"></app-select>
+    <app-date-picker selectedDate="2023-01-01"></app-date-picker>
 
-<!-- Data Display Components -->
-<app-card title="Card Title">
-  <p>Card content goes here...</p>
-</app-card>
-<app-table [data]="[{name: 'John', age: 30}, {name: 'Jane', age: 25}]" [columns]="['name', 'age']"></app-table>
-<app-tabs [tabs]="[{label: 'Tab 1', content: 'Content 1'}, {label: 'Tab 2', content: 'Content 2'}]"></app-tabs>
-<app-accordion [items]="[{title: 'Item 1', content: 'Content 1'}, {title: 'Item 2', content: 'Content 2'}]"></app-accordion>
-<app-badge label="New" type="success"></app-badge>
+    <!-- Navigation Components -->
+    <app-navbar></app-navbar>
+    <app-breadcrumb [items]="[{label: 'Home', url: '/'}, {label: 'About', url: '/about'}]"></app-breadcrumb>
+    <app-pagination [totalPages]="5" [currentPage]="1"></app-pagination>
 
-<!-- Overlay Components -->
-<app-modal [title]="'Modal Title'" [visible]="true">
-  <p>Modal content goes here...</p>
-</app-modal>
-<app-tooltip message="Tooltip text">
-  <span>Hover over me</span>
-</app-tooltip>
-<app-dropdown [options]="['Option 1', 'Option 2', 'Option 3']" selected="Option 1"></app-dropdown>
+    <!-- Feedback Components -->
+    <app-alert type="success" message="This is a success alert!"></app-alert>
+    <app-toast-notification message="This is a toast notification!" type="info"></app-toast-notification>
+    <app-spinner-loader></app-spinner-loader>
 
-<!-- Miscellaneous Components -->
-<app-slider [min]="0" [max]="100" [value]="50"></app-slider>
-<app-progress-bar [value]="70"></app-progress-bar>
+    <!-- Data Display Components -->
+    <app-card title="Card Title">
+      <p>Card content goes here...</p>
+    </app-card>
+    <app-table [data]="[{name: 'John', age: 30}, {name: 'Jane', age: 25}]" [columns]="['name', 'age']"></app-table>
+    <app-tabs [tabs]="[{label: 'Tab 1', content: 'Content 1'}, {label: 'Tab 2', content: 'Content 2'}]"></app-tabs>
+    <app-accordion [items]="[{title: 'Item 1', content: 'Content 1'}, {title: 'Item 2', content: 'Content 2'}]"></app-accordion>
+    <app-badge label="New" type="success"></app-badge>
+
+    <!-- Overlay Components -->
+    <button (click)="openModal()">Open Modal</button>
+    <app-modal [title]="'Modal Title'" [visible]="isModalVisible" (close)="closeModal()">
+      <p>Modal content goes here...</p>
+    </app-modal>
+    <app-tooltip message="Tooltip text">
+      <span>Hover over me</span>
+    </app-tooltip>
+    <app-dropdown [options]="['Option 1', 'Option 2', 'Option 3']" selected="Option 1"></app-dropdown>
+
+    <!-- Miscellaneous Components -->
+    <app-slider [min]="0" [max]="100" [value]="50"></app-slider>
+    <app-progress-bar [value]="70"></app-progress-bar>
+  </div>
+</div>
 <router-outlet />
