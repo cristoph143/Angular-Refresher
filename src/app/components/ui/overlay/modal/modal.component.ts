@@ -14,6 +14,7 @@ export class ModalComponent {
   @Output() close = new EventEmitter<void>();
 
   onClose() {
+    this.visible = false;
     this.close.emit();
   }
 }
