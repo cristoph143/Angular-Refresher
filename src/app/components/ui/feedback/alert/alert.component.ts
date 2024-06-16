@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-alert',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './alert.component.html',
-  styleUrl: './alert.component.css'
+  styleUrls: ['./alert.component.css']
 })
 export class AlertComponent {
-
+  @Input() type: 'success' | 'error' | 'warning' | 'info' = 'info';
+  @Input() message: string = '';
 }
