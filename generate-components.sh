@@ -9,6 +9,7 @@ ng generate component components/ui/form/date-picker
 
 # Navigation Components
 ng generate component components/ui/navigation/navbar
+ng generate component components/ui/navigation/footer
 ng generate component components/ui/navigation/sidebar
 ng generate component components/ui/navigation/breadcrumb
 ng generate component components/ui/navigation/pagination

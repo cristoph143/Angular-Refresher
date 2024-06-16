@@ -27,6 +27,7 @@ import { DropdownComponent } from './components/ui/overlay/dropdown/dropdown.com
 
 import { SliderComponent } from './components/ui/misc/slider/slider.component';
 import { ProgressBarComponent } from './components/ui/misc/progress-bar/progress-bar.component';
+import { FooterComponent } from './components/ui/navigation/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,7 @@ import { ProgressBarComponent } from './components/ui/misc/progress-bar/progress
     SidebarComponent,
     BreadcrumbComponent,
     PaginationComponent,
+    FooterComponent,
     AlertComponent,
     ToastNotificationComponent,
     SpinnerLoaderComponent,
@@ -61,9 +63,8 @@ import { ProgressBarComponent } from './components/ui/misc/progress-bar/progress
 })
 export class AppComponent {
   title = 'myapp';
-
   isModalVisible: boolean = false;
-  isSidebarVisible: boolean = true;
+  isSidebarVisible: boolean = false;
 
   openModal() {
     this.isModalVisible = true;
