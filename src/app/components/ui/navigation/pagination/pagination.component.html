@@ -1,1 +1,7 @@
-<p>pagination works!</p>
+<nav aria-label="Page navigation">
+    <ul>
+        <li *ngFor="let page of pages" [class.active]="page === currentPage">
+            <a (click)="currentPage = page">{{ page }}</a>
+        </li>
+    </ul>
+</nav>
