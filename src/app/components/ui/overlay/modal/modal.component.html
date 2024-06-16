@@ -1,1 +1,11 @@
-<p>modal works!</p>
+<div class="modal" *ngIf="visible">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" (click)="onClose()">&times;</span>
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="modal-body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
