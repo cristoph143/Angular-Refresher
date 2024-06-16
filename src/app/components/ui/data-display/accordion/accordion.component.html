@@ -1,1 +1,10 @@
-<p>accordion works!</p>
+<div class="accordion">
+    <div *ngFor="let item of items; let i = index">
+        <div class="accordion-header" (click)="toggleItem(i)">
+            {{ item.title }}
+        </div>
+        <div class="accordion-body" *ngIf="i === selectedItem">
+            {{ item.content }}
+        </div>
+    </div>
+</div>
