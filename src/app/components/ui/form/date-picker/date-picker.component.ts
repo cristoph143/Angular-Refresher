@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-date-picker',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './date-picker.component.html',
-  styleUrl: './date-picker.component.css'
+  styleUrls: ['./date-picker.component.css']
 })
 export class DatePickerComponent {
-
+  @Input() selectedDate: string = '';
 }
